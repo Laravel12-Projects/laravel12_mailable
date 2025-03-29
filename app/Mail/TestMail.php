@@ -24,15 +24,15 @@ class TestMail extends Mailable
             // El asunto es el texto que se mostrara en el encabezado del email.
             // El remitente es la direccion de correo electronico que se mostrara como la que envio el email.
             // En este caso, se esta usando una variable de entorno definida en el archivo .env.
-            subject: 'This is an Test Mail', 
-            from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
+            subject: 'This is an Test Mail', // asunto 
+            from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')), // remitente
         );
     }
 
     public function content(): Content
     {
         return new Content(
-            view: 'emails.test',
+            view: 'emails.test', // vista que se mostrara en el cuerpo del email
         );
     }
 
