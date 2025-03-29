@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
@@ -11,7 +13,8 @@ class MailController extends Controller
         return view('index');
     }
 
-    public function mailMe(Request $request){
-        
+    public function mailMe()
+    {
+        Mail::to('leomessi@gmail.com')->send(new TestMail('Leo Messi'));
     }
 }
